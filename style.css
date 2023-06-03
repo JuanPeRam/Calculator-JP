@@ -18,7 +18,7 @@ body{
 }
 
 .calculator-container{
-    border: 1px solid black;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0,.37);
 }
 
 .buttons-container{
@@ -61,6 +61,11 @@ body{
 .calculator-button:hover{
     background-color: rgb(229, 229, 229);
     cursor: pointer;
+}
+
+.calculator-button:active{
+    scale: .9;
+    transition: .1s;
 }
 
 .align-left{
