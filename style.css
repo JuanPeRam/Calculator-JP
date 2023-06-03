@@ -2,7 +2,7 @@ body{
     margin: 0;
     box-sizing: border-box;
     padding: 0;
-    background: linear-gradient(90deg, rgba(42, 33, 103, 0.192),rgba(255,255,255,.2));
+    background: linear-gradient(90deg, rgba(42, 33, 103, 0.16),rgba(255,255,255,.2));
     font-family: monospace;
     font-size: 2.4rem;
 }
@@ -34,7 +34,7 @@ body{
     color: white;
     min-height: 15vh;
     max-width: 100%;
-    overflow: hidden;
+    padding: 0 15px;
 }
 
 .console-top{
@@ -42,6 +42,7 @@ body{
     grid-template-columns: 80% 20%;
     width: 100%;
     height: 5vh;
+    margin-bottom: 20px;
 }
 
 .console-bot{
@@ -54,6 +55,7 @@ body{
     border: 1px solid rgb(181, 181, 181);
     padding: 10px 20px;
     text-align: center;
+    user-select: none;
 }
 
 .calculator-button:hover{
@@ -70,8 +72,10 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(7, 15, 62);
-    
+    background-image: url(img/polygon-scatter-haikei.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .text-footer{
@@ -81,4 +85,20 @@ footer{
 
 .spanc-2{
     grid-column: span 2;
+}
+
+.links-list{
+    text-decoration: none;
+    list-style-type: none;
+    display: flex;
+}
+
+li a img{
+    height: 30px;
+}
+
+#githublogo{
+    color: white;
+    filter: invert(100%);
+    height: 30px;
 }

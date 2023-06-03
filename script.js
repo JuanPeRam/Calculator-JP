@@ -2,6 +2,7 @@ const mainConsole = document.getElementById("bottom-console")
 const topConsole = document.getElementById("top-console")
 const buttons = document.querySelectorAll(".calculator-button")
 const operation = document.getElementById("operation")
+const maxDecimalPositions = 6
 
 topConsole.textContent = ""
 
@@ -21,7 +22,7 @@ function readButton(key){
         case "=":
             operate()
             break
-        case "«-":
+        case "←":
             clearLast()
             break
         case "C":
@@ -85,15 +86,26 @@ function operate(){
             default: return
         }
         if(result!=null){
-            mainConsole.textContent = result
+            mainConsole.textContent = checkDecimals(result,maxDecimalPositions)
             operation.textContent = ""
             topConsole.textContent = ""
         }
     }
 }
 
+function checkDecimals(number, decimals){
+    const numberDecimals = number.toString().split('.')[1];
+  
+    if (numberDecimals && numberDecimals.length > decimals) {
+        return parseFloat(number.toFixed(decimals));
+    }
+    
+    return number;
+}
+
 //Footer text set
 const creatorName = "Juan Pereira"
+const copySymbol =  "&copy;"
 const year = new Date().getFullYear()
 const footer = document.getElementById("footer-text")
-footer.textContent = creatorName + " - "+ year
+footer.textContent += " "+creatorName + " - "+ year
