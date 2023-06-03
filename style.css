@@ -33,17 +33,21 @@ body{
     background-color: rgba(0, 0, 0, 0.719);
     color: white;
     min-height: 15vh;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .console-top{
     display: grid;
     grid-template-columns: 80% 20%;
     width: 100%;
+    height: 5vh;
 }
 
 .console-bot{
     text-align: right;
     width: 100%;
+    height: 10vh;
 }
 
 .calculator-button{
@@ -73,4 +77,8 @@ footer{
 .text-footer{
     color: white;
     font-size: .7em;
+}
+
+.spanc-2{
+    grid-column: span 2;
 }
