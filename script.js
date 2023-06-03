@@ -35,11 +35,24 @@ function readButton(key){
 function numberPressed(number){
     let currentValue = mainConsole.textContent
     if(number == "."){
-        if(currentValue.indexOf(".")==-1) mainConsole.textContent+=number
+        if(currentValue.indexOf(".")==-1) mainConsole.textContent+="."
         return
     }
-    currentValue+=number
-    mainConsole.textContent = parseFloat(currentValue)
+    if(number == "0" && currentValue.indexOf(".")!=-1){
+        mainConsole.textContent+="0"
+    }
+    else{
+        currentValue+=number
+        mainConsole.textContent = parseFloat(currentValue)
+    }
+    if(checkNumberLength(mainConsole.textContent,10)){
+        mainConsole.textContent = parseFloat(Infinity)
+    }
+    
+}
+
+function checkNumberLength(text,maxLength){
+    return text.length > maxLength
 }
 
 function clearLast(){
@@ -90,6 +103,9 @@ function operate(){
             operation.textContent = ""
             topConsole.textContent = ""
         }
+        if(checkNumberLength(mainConsole.textContent,10)){
+            mainConsole.textContent = parseFloat(Infinity)
+        }
     }
 }
 
@@ -105,7 +121,6 @@ function checkDecimals(number, decimals){
 
 //Footer text set
 const creatorName = "Juan Pereira"
-const copySymbol =  "&copy;"
 const year = new Date().getFullYear()
 const footer = document.getElementById("footer-text")
 footer.textContent += " "+creatorName + " - "+ year
