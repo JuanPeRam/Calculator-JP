@@ -24,6 +24,13 @@ body{
 .buttons-container{
     display: grid;
     grid-template-columns: repeat(4,max-content);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+}
+
+#operation{
+    display: grid;
+    place-items: center;
 }
 
 .console-container{
@@ -59,7 +66,8 @@ body{
 }
 
 .calculator-button:hover{
-    background-color: rgb(229, 229, 229);
+    background-color: rgb(41, 126, 166);
+    color: whitesmoke;
     cursor: pointer;
 }
 
