@@ -2,83 +2,26 @@ body{
     margin: 0;
     box-sizing: border-box;
     padding: 0;
-    background: linear-gradient(90deg, rgba(42, 33, 103, 0.16),rgba(255,255,255,.2));
-    font-family: monospace;
-    font-size: 2.4rem;
-}
-
-.flex-container{
-    display: flex;
-    height: 90vh;
-}
-
-.flex-middle{
-    justify-content: center;
-    align-items: center;
-}
-
-.calculator-container{
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0,.37);
-}
-
-.buttons-container{
-    display: grid;
-    grid-template-columns: repeat(4,max-content);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: bold;
+    background-color: #33383f;
 }
 
-#operation{
+.container{
+    height: 90vh;
+    width: 100%;
     display: grid;
     place-items: center;
 }
 
-.console-container{
-    max-height: 20vh;
-    display: flex;
-    flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.719);
-    color: white;
-    min-height: 15vh;
-    max-width: 100%;
-    padding: 0 15px;
-}
-
-.console-top{
+.main-board{
     display: grid;
-    grid-template-columns: 80% 20%;
-    width: 100%;
-    height: 5vh;
-    margin-bottom: 20px;
-    font-size: .7em;
+    grid-template-columns: repeat(3,auto);
 }
 
-.console-bot{
-    text-align: right;
-    width: 100%;
-    height: 10vh;
-}
-
-.calculator-button{
-    border: 1px solid rgb(181, 181, 181);
-    padding: 10px 20px;
-    text-align: center;
-    user-select: none;
-}
-
-.calculator-button:hover{
-    background-color: rgb(41, 126, 166);
-    color: whitesmoke;
-    cursor: pointer;
-}
-
-.calculator-button:active{
-    scale: .9;
-    transition: .1s;
-}
-
-.align-left{
-    text-align: left;
+.clickable:hover{
+    background-color: #505863;
+    border-radius: 5px;
 }
 
 footer{
@@ -90,17 +33,14 @@ footer{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    font-family: monospace;
+    font-size: 2em;
 }
 
 .text-footer{
     color: white;
     font-size: .7em;
 }
-
-.spanc-2{
-    grid-column: span 2;
-}
-
 .links-list{
     text-decoration: none;
     list-style-type: none;
@@ -115,4 +55,61 @@ li a img{
     color: white;
     filter: invert(100%);
     height: 30px;
+}
+  
+  .cell {
+    border: 5px solid #05ccab;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 70px;
+    color: white;
+    user-select: none;
+  }
+  
+  .cell:nth-child(3n){
+    border-right: none;
+  }
+
+  .cell:nth-child(n){
+    border-left: none;
+  }
+  
+  .cell:nth-last-child(-n+3) {
+    border-bottom: none;
+  }
+
+  .cell:nth-child(n){
+    border-top: none;
+  }
+
+  .game-menu{
+    background-color: rgba(0, 0, 0, 0.541);
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: lighter;
+    font-size: 3em;
+  }
+
+  #start-button{
+    padding: 10px 20px;
+    background-color: #505863;
+    color: white;
+  }
+
+#start-button:hover{
+    background-color: #66707e;
+    cursor: pointer;
+    user-select: none;
 }
