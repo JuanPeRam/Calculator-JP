@@ -15,8 +15,7 @@ buttons.forEach(button => {
 function readButton(key){
     switch(key){
         case "-":
-            if(minusPressed())
-            break
+            if(minusPressed()) break
         case "/":
         case "x":
         case "+":
@@ -37,7 +36,7 @@ function readButton(key){
 function minusPressed(){
     let currentText = mainConsole.textContent
     if(currentText == "" || currentText == 0){
-        mainConsole.currentText = "-0"
+        mainConsole.textContent = "-0"
         return true
     }
     return false
