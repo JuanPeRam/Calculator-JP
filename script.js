@@ -14,10 +14,12 @@ buttons.forEach(button => {
 
 function readButton(key){
     switch(key){
-        case "+":
         case "-":
+            if(minusPressed())
+            break
         case "/":
         case "x":
+        case "+":
             setCurrentOperation(key)
         case "=":
             operate()
@@ -30,6 +32,15 @@ function readButton(key){
             break
         default: numberPressed(key)
     }
+}
+
+function minusPressed(){
+    let currentText = mainConsole.textContent
+    if(currentText == "" || currentText == 0){
+        mainConsole.currentText = "-0"
+        return true
+    }
+    return false
 }
 
 function numberPressed(number){
